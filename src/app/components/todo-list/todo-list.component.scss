@@ -1,0 +1,134 @@
+.container {
+  position: relative;
+  width: 1200px;
+  height: 700px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Calibri, sans-serif;
+}
+
+.title {
+  width: 80%;
+  max-width: 1200px;
+  height: 40px;
+  margin-top: 50px;
+  display: flex;
+  align-items: end;
+  flex-direction: row;
+
+  h2 {
+    margin: 0;
+  }
+
+  span {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+}
+
+.add-task {
+  position: absolute;
+  left: 115px;
+  right: 115px;
+  height: 30px;
+  margin-bottom: 50px;
+}
+
+.content {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+
+    &:hover {
+      color: orange;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+//Modal-----
+
+.modal {
+  width: 70%;
+  max-width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  background: white;
+}
+
+.modal-inputs {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  box-shadow: 0 0 3px gray;
+
+  input {
+    border: none;
+    outline: none;
+  }
+}
+
+.task-name {
+  height: 30px;
+  font-weight: bolder;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.task-description {
+  padding-left: 10px;
+  padding-bottom: 100px;
+  font-size: 18px;
+}
+
+.btn-container {
+  width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: center;
+
+  button {
+    height: 36px;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}
+
+.btn-add {
+  color: white;
+  border: none;
+}
+
+.btn-cancel {
+  background: white;
+  color: black;
+  margin-left: 20px;
+  border: 1px solid gray;
+
+  &:hover {
+    background: whitesmoke;
+  }
+}

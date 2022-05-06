@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let todo of todos$ | async; let id = index">
+    <input (click)="removeTodo(todo)" type="radio">
+    <div class="todo-container" (click)="showTodo(todo)">
+    <span>{{todo.title}}</span>
+    <p>{{todo.description}}</p>
+    </div>
+  </li>
+</ul>
+
+<app-modal *ngIf="modal"
+           [selectedTodo]="selectedTodo"
+           (close)="modal = false"
+></app-modal>
+
+

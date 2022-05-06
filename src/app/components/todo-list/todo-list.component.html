@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="title">
+    <h2>Сегодня</h2>
+    <span>{{nowDate | date: 'dd.MM.yyyy'}} г.</span>
+  </div>
+
+  <app-todo-item></app-todo-item>
+
+  <div class="content">
+    <span *ngIf="!modal" (click)="showModal()" class="add-task">
+      <img src="assets/icons/plus.svg" alt="add">
+      Добавить задачу
+    </span>
+  </div>
+
+</div>
+
+<!--  Modal - Create-->
+  <ng-container *ngIf="modal">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="modal">
+        <div class="modal-inputs">
+          <input formControlName="title" class="task-name" type="text" placeholder="Название задачи" autofocus>
+          <input formControlName="description" class="task-description" type="text" placeholder="Описание">
+        </div>
+        <div class="btn-container">
+          <button
+            [ngStyle]="{background: form.invalid ? '#cccccc' : '#ffa07a'}"
+            [disabled]="form.invalid"
+            class="btn-add" type="submit"
+          >
+            Добавить задачу
+          </button>
+          <button (click)="hideModal()" class="btn-cancel" type="button">Отмена</button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+
+<!--  Error-->
+  <ng-container *ngIf="this.apiService.errorMessage">
+    <h1 [ngStyle]="{color: 'red'}">{{apiService.errorStatus}}</h1>
+    <h3 [ngStyle]="{color: 'red'}">{{apiService.errorMessage}}</h3>
+  </ng-container>
+

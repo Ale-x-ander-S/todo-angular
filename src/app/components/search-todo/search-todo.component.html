@@ -1,0 +1,18 @@
+<div class="search-component">
+
+  <input class="search" type="text" [(ngModel)]="searchStr" (keyup)="search()" placeholder="Поиск">
+
+  <ul *ngIf="searchStr">
+    <li *ngFor="let todo of todos" (click)="getTodo(todo)">
+      <span>{{todo.title}}</span>
+      <p>{{todo.description}}</p>
+    </li>
+  </ul>
+
+</div>
+
+<app-modal *ngIf="modal"
+           [selectedTodo]="selectedTodo"
+           (close)="modal = false"
+></app-modal>
+

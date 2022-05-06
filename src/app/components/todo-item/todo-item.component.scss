@@ -1,0 +1,37 @@
+ul {
+  width: 80vw;
+  max-width: 1000px;
+  margin-top: 50px;
+  font-family: Calibri, sans-serif;
+
+}
+
+li {
+  display: flex;
+  margin-top: 10px;
+  list-style-type: none;
+  border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+
+  &:hover {
+    color: sandybrown;
+  }
+}
+
+.todo-container {
+  display: block;
+  width: 100%;
+}
+
+span {
+  margin-left: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  margin: 5px 0 10px 5px;
+  font-size: 16px;
+  color: gray;
+}
+

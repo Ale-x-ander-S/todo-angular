@@ -1,0 +1,9 @@
+<ng-container>
+  <div class="background"></div>
+  <div class="container">
+    <h2>{{selectedTodo.title}}</h2>
+    <hr>
+    <p class="description">{{selectedTodo.description}}</p>
+    <button class="btn-close" (click)=close.emit()>Закрыть</button>
+  </div>
+</ng-container>
